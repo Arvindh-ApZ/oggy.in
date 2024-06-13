@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="./css/kanbanboard.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="left-side">
+
+            <div class="logo-section">
+
+
+               
+
+                <img src="./images/logo.png" alt="Company Logo" class="logo" width="50px" height="20px">
+
+
+            </div>
+
+            <ul class="navigation">
+
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+
+                <li><a href="#">Kanban Board</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="right-side">
+
+            <div class="user-profile">
+
+                <img src="./images/userlogo.png" alt="User Profile Picture" class="profile-picture">
+
+                <div class="dropdown">
+
+                    <!-- <button class="dropbtn">My Profile</button> -->
+
+                    <div class="dropdown-content">
+
+                        <a href="#">My Profile</a>
+
+                        <a href="#">Settings</a>
+
+                        <a href="#" id="logout">Logout</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <!----kanban board-->
+    
+    <div class="kanban-board" id="kanban-board">
+        <div class="column" id="product-backlog">
+            <h2>Product Backlog</h2>
+            <div class="task-container"></div>
+            <div class="add-task" onclick="openModal('product-backlog')">+</div>
+        </div>
+        <div class="column" id="backlog">
+            <h2>Backlog</h2>
+            <div class="task-container"></div>
+            <div class="add-task" onclick="openModal('backlog')">+</div>
+        </div>
+        <div class="column" id="progress">
+            <h2>Progress</h2>
+            <div class="task-container"></div>
+            <div class="add-task" onclick="openModal('progress')">+</div>
+        </div>
+        <div class="column" id="completed">
+            <h2>Completed</h2>
+            <div class="task-container"></div>
+            <div class="add-task" onclick="openModal('completed')">+</div>
+        </div>
+    </div>
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Add Task</h2>
+            <input type="text" id="task-input" placeholder="Task name">
+            <select id="task-priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+    </div>
+    <script src="./js/kanbanboard.js"></script>
+</body>
+</html>
